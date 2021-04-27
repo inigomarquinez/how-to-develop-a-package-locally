@@ -2,27 +2,39 @@
   "name": "@ks/how-to-develop-a-package-locally",
   "version": "1.0.0",
   "description": "Different approaches to develop a package locally",
-  "main": "index.js",
+  "source": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/js/index.es.js",
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.13.16",
+    "@babel/preset-react": "^7.13.13",
+    "@rollup/plugin-commonjs": "^18.0.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
     "@storybook/addon-actions": "^6.2.9",
     "@storybook/addon-essentials": "^6.2.9",
     "@storybook/addon-links": "^6.2.9",
     "@storybook/react": "^6.2.9",
     "all-contributors-cli": "^6.20.0",
-    "babel-loader": "^8.2.2"
+    "copyfiles": "^2.4.1",
+    "postcss": "^8.2.12",
+    "rollup": "^2.45.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^4.0.0",
+    "rollup-plugin-url": "^3.0.1"
   },
   "scripts": {
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build": "rollup -c && copyfiles -f ./src/**/assets/* ./dist/assets",
     "npm:local-unpublish": "npm unpublish @ks/how-to-develop-a-package-locally --force --registry http://localhost:4873",
-    "npm:local-publish": "npm run build-storybook && npm run npm:local-unpublish && npm publish --registry http://localhost:4873"
+    "npm:local-publish": "npm run build && npm run npm:local-unpublish && npm publish --registry http://localhost:4873"
   },
   "repository": {
     "type": "git",
