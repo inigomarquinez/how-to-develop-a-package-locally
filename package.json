@@ -1,5 +1,5 @@
 {
-  "name": "@ks/how-to-develop-a-package-locally",
+  "name": "@ks/my-local-package",
   "version": "1.0.0",
   "description": "Different approaches to develop a package locally",
   "source": "src/index.js",
@@ -33,17 +33,17 @@
     "contributors:generate": "all-contributors generate",
     "storybook": "start-storybook -p 6006",
     "build": "rollup -c && copyfiles -f ./src/**/assets/* ./dist/assets",
-    "npm:local-unpublish": "npm unpublish @ks/how-to-develop-a-package-locally --force --registry http://localhost:4873",
+    "npm:local-unpublish": "npm unpublish @ks/howto-develop-a-package-locally --force --registry http://localhost:4873",
     "npm:local-publish": "npm run build && npm run npm:local-unpublish && npm publish --registry http://localhost:4873"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/inigomarquinez/how-to-develop-a-package-locally.git"
+    "url": "git+https://github.com/inigomarquinez/howto-develop-a-package-locally.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/inigomarquinez/how-to-develop-a-package-locally/issues"
+    "url": "https://github.com/inigomarquinez/howto-develop-a-package-locally/issues"
   },
-  "homepage": "https://github.com/inigomarquinez/how-to-develop-a-package-locally#readme"
+  "homepage": "https://github.com/inigomarquinez/howto-develop-a-package-locally#readme"
 }

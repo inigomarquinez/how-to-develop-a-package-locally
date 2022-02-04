@@ -23,3 +23,5 @@ storybook-static
 
 # Webstorm config
 .idea
+
+.DS_Store
