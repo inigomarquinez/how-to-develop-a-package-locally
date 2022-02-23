@@ -29,7 +29,7 @@ npm link # creates global link
 
 Take a look at the following image, where we can see that after running `npm link` a symlink to our local package has been created under `{prefix}/lib/node_modules/`:
 
-![symlink](assests/symlink.png)
+![symlink](assets/symlink.png)
 
 ### <Alternative #2>
 
