@@ -1,6 +1,6 @@
 {
   "name": "@ks/how-to-develop-a-package-locally",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Different approaches to develop a package locally",
   "source": "src/index.js",
   "main": "dist/index.js",
