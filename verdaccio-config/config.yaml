@@ -1,0 +1,47 @@
+storage: ./storage
+listen: 4873 #Any host:port configured in conf/config.yaml under listen is currently ignored when using docker.
+
+web:
+  enable: true
+  title: VerdaccioSmiths
+  logo: "https://media-exp1.licdn.com/dms/image/C4D0BAQGtD4Yqfs3KZw/company-logo_200_200/0/1625132076641?e=2159024400&v=beta&t=0SZwem-G2m1NMDdQGGA5ck992-kJqXBf3Tn0kWwHhSc"
+  primary_color: "#9e0057"
+  gravatar: true
+  scope: "@scope"
+  sort_packages: asc
+  darkMode: true
+  rateLimit:
+    windowMs: 50000
+    max: 1000
+  pkgManagers:
+    - npm
+    - yarn
+    - pnpm
+
+
+publish:
+  allow_offline: true
+auth:
+  htpasswd:
+    file: ./htpasswd
+    # Maximum amount of users allowed to register, defaults to "+inf".
+    # You can set this to -1 to disable registration.
+    #max_users: 1000
+    #NOTE: In our solution this is not working, we have to  make it 1 at least. Otherwise you cannot log-in(on npm cli, not verdaccio ui).
+uplinks:
+  default:
+    url: http://localhost:4873
+    # max_fails: 100
+
+packages:
+  '@*/*':
+    access: $all
+#    access: $authenticated
+    publish: $all
+    proxy: mDefault
+  '**':
+    access: $authenticated
+    publish: $authenticated
+    proxy: default
+logs:
+  - { type: stdout, format: pretty, level: http }
