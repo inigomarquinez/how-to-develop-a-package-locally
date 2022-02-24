@@ -1,6 +1,4 @@
 storage: ./storage
-listen: 4873 #Any host:port configured in conf/config.yaml under listen is currently ignored when using docker.
-
 web:
   enable: true
   title: VerdaccioSmiths
@@ -30,7 +28,7 @@ auth:
     #NOTE: In our solution this is not working, we have to  make it 1 at least. Otherwise you cannot log-in(on npm cli, not verdaccio ui).
 uplinks:
   default:
-    url: http://localhost:4873
+    url: http://localhost:9000
     # max_fails: 100
 
 packages:

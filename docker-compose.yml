@@ -3,7 +3,9 @@ services:
   verdaccio:
     container_name: verdaccio-smiths
     image: verdaccio/verdaccio:latest
+    environment:
+      - VERDACCIO_PORT=9000
     ports:
-      - '4875:4873'
+      - '9000:9000'
     volumes:
       - './verdaccio-config:/verdaccio/conf'
