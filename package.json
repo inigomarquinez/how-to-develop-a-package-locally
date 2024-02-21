@@ -20,7 +20,7 @@
     "@storybook/react": "^6.2.9",
     "all-contributors-cli": "^6.20.0",
     "copyfiles": "^2.4.1",
-    "postcss": "^8.2.12",
+    "postcss": "^8.4.31",
     "rollup": "^2.45.2",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
